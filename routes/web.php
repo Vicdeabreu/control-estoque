@@ -15,6 +15,13 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/home', function() {
-    echo "Hello World!";
-});
+Route::get('/formulario', 'HomeController@exibirFormulario');
+
+Route::post('/formulario', 'HomeController@cadastrarFormulario');
+
+Route::get('/request/id/{id?}', 'HomeController@request'); // Paso el id como parámetro entre mostacho
+
+Route::get('/home', 'HomeController@viewHome');
+
+Route::get('/cidades', 'CidadeController@viewCidades');
+

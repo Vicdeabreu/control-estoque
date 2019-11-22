@@ -78,7 +78,7 @@
                     @endauth
                 </div>
             @endif
-
+                {{$pessoa}}
             <div class="content">
                 <div class="title m-b-md">
                     Laravel
