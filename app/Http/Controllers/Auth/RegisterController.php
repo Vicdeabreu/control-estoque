@@ -63,11 +63,19 @@ class RegisterController extends Controller
      */
     protected function create(array $data)
     {
+        $nomeArquivo = $data['img_profile']->getClientOriginalName();
+        $dataAtual = date('y-m-d');
+        $nomeArquivo = $dataAtual.$nomeArquivo;
+        $caminhoImg = "storage/profile/$nomeArquivo"; // Primero tienes que linkar la pasta storage con public: "php artisan storage:link" 
+        $path = $data['img_profile']->storeAs('public/profile',$nomeArquivo); // Tienes que especificar la pasta (a diferencia de la de acceder) para saber dónde guardar
+
+        // dd($data['img_profile']->getClientSize());
+
         return User::create([
             'name' => $data['name'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            'img_profile' => 'img',
+            'img_profile' => $caminhoImg,
             'active' => 1
         ]);
     }
