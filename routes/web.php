@@ -25,7 +25,9 @@ Route::get('/home', 'HomeController@viewHome');
 
 Route::get('/cidades', 'CidadeController@viewCidades');
 
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/produtos/cadastrar', 'ProductController@viewForm');
+Route::post('/produtos/cadastrar', 'ProductController@create');
