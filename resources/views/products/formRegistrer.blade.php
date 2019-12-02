@@ -2,7 +2,7 @@
 
 @section('content')
 
-  <section class="container col-12">
+  <section class="container col-10">
     <div class="row">
       <col-md-12></col-md-12>
       <h1>Cadastro de Produto</h1>
@@ -31,9 +31,6 @@
       </div>
       <div class="form-group">
         <button class="btn btn-primary" type="submit">Cadastrar produto</button>
-      </div>
-      <div>
-        <button></button>
       </div>
     </form>
 

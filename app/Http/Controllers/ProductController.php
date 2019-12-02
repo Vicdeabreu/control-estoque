@@ -21,11 +21,11 @@ class ProductController extends Controller{
     
     $result = $newProduct->save();
 
-    if($result){
-      echo "Deu certo sem query!";
-    }else{
-      echo "Vai ter que criar em!";
-    }
+    // if($result){
+    //   echo "Deu certo sem query!";
+    // }else{
+    //   echo "Vai ter que criar em!";
+    // }
 
   return view('products.formRegistrer', ["result"=>$result]);
 
