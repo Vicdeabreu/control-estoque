@@ -34,7 +34,21 @@ class ProductController extends Controller{
   }
 
   public function update(Request $request){
-    // Para atualizar devemos 
+    // Para atualizar devemos buscar um objeto ao invez de criar,
+    // usando Product::find($idProduto)
+    // Vai ser necessario usar rotas com parametro
+  }
+
+  public function delete(Request $request){
+    //Para deletar vc vai usar Product::destroy($id)
+  }
+
+  public function viewAllProducts(Request $request){
+    //Vai precisar do Product::All()
+  }
+
+  public function viewOneProduct(Request $request){
+    //Vai precisar do Product::find($idProduct)
   }
 
 }
