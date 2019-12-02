@@ -23,11 +23,15 @@ Route::get('/request/id/{id?}', 'HomeController@request'); // Paso el id como pa
 
 Route::get('/home', 'HomeController@viewHome');
 
-Route::get('/cidades', 'CidadeController@viewCidades');
-
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/produtos/cadastrar', 'ProductController@viewForm');
 Route::post('/produtos/cadastrar', 'ProductController@create');
+
+Route::get('/produtos/atualizar/{id?}', 'ProductController@viewFormUpdate');
+Route::post('/produtos/atualizar', 'ProductController@update');
+
+Route::get('/produtos', 'ProductController@viewAllProducts');
+Route::get('produtos/deletar/{id?}', 'ProductController@delete');
