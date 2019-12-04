@@ -30,7 +30,7 @@
               <td>{{$product->description}}</td>
               <td>{{$product->quantity}}</td>
               <td>R$ {{$product->price}}</td>
-              <td>usuario</td>
+              <td>{{$product->user->name}}</td> 
               <td>{{$product->created_at}}</td>
               <td>{{$product->updated_at}}</td>
               <td>

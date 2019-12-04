@@ -14,7 +14,7 @@ class Product extends Model
 
     // Cuando se trabaja con padrón Laravel. Se tienen que hacer esas 3 configuraciones
 
-    public function users(){
+    public function user(){
         return $this->belongsTo('App\User');
     }
 

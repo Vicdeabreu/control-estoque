@@ -23,11 +23,14 @@ Route::get('/request/id/{id?}', 'HomeController@request'); // Paso el id como pa
 
 Route::get('/home', 'HomeController@viewHome');
 
-Auth::routes();
+Auth::routes(); 
+// Esta función crea las rutas Login y Registrer. Vienen predeterminadas en Laravel
+Route::get('/login/google', 'Auth\LoginController@redirectToGoogle');
+Route::get('/login/google/callback', 'Auth\LoginController@receiveDataGoogle');
 
 Route::get('/home', 'HomeController@index')->name('home');
 
-Route::get('/produtos/cadastrar', 'ProductController@viewForm');
+Route::get('/produtos/cadastrar', 'ProductController@viewForm')->middleware('checkuser');
 Route::post('/produtos/cadastrar', 'ProductController@create');
 
 Route::get('/produtos/atualizar/{id?}', 'ProductController@viewFormUpdate');
